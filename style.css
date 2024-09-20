@@ -1,0 +1,301 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    
+}
+
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fafdff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; 
+}
+
+.container {
+    width: 250px;
+    height: 250px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cloud {
+    width: 250px;
+}
+
+.front {
+    padding-top: 45px;
+    margin-left: 25px;
+    display: inline;
+    position: absolute;
+    z-index: 11;
+    animation: clouds 8s infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.back {
+    margin-top: -30px;
+    margin-left: 150px;
+    z-index: 12;
+    animation: clouds 12s infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.right-front, .left-front, .right-back, .left-back {
+    background-color: #61aaf3;
+}
+
+.right-front {
+    width: 45px;
+    height: 45px;
+    border-radius: 50% 50% 50% 0%;
+    display: inline-block;
+    margin-left: -25px;
+    z-index: 5;
+}
+
+.left-front {
+    width: 65px;
+    height: 65px;
+    border-radius: 50% 50% 0% 50%;
+    display: inline-block;
+    z-index: 5;
+}
+
+.right-back {
+    width: 50px;
+    height: 50px;
+    border-radius: 50% 50% 50% 0%;
+    display: inline-block;
+    margin-left: -20px;
+    z-index: 5;
+}
+
+.left-back {
+    width: 30px;
+    height: 30px;
+    border-radius: 50% 50% 0% 50%;
+    display: inline-block;
+    z-index: 5;
+}
+
+.sun {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(to right, #fcbb04, #fffc00);
+    border-radius: 60px;
+    display: inline;
+    position: absolute;
+}
+
+.sunshine {
+    animation: sunshines 2s infinite;
+}
+
+@keyframes sunshines {
+    0% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(1.4);
+        opacity: 0;
+    }
+}
+
+@keyframes clouds {
+    0% {
+        transform: translateX(15px);
+    }
+    50% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(15px);
+    }
+}
+
+.fundo {
+    background-image: linear-gradient(#a4c6e8, #dde2f0) ;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribui os elementos, fixando a previsão na parte inferior */
+    color: black;
+}
+.header {
+    height: 10vh;
+    padding: 5vh;
+    margin-left: 3%;
+    margin-right: 3%;
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    align-items: center;
+    padding-bottom: 3vh;
+}
+.localizacao {
+    display: flex;
+    flex-direction: row;
+    gap: 1%;
+    align-items: center;
+    flex-shrink: 0;
+}
+.iconelocalizacao {
+    height: 3vh;
+    width: 3vh;
+}
+#cidade {
+    font-size: 2rem;
+    width: 40vh;
+}
+.searchbar input[type=text] {
+    float: right;
+    padding: 1vh;
+    border: none;
+    height: 4vh;
+    width: 40vw;
+    border-radius: 50px;
+    font-size: 1rem;
+    margin-right: 12%;
+}
+
+@media screen and (max-width: 600px) {
+    .searchbar a, .searchbar input[type=text] {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 2vh;
+    }
+    .searchbar input[type=text] {
+        border: 1px solid #ccc;
+    }
+}
+.infos {
+    margin-top: 0%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0%;
+}
+#temperatura {
+    font-size: 10vh;
+}
+#datahora{
+    font-size:3vh;
+}
+#climahoje {
+    font-size: 7vh;
+}
+#sensacao{
+    font-size:4vh;
+}
+#pressao,#umidade,#vento,#visibilidade{
+    font-size:3.5vh;
+}
+
+.bloco1 {
+    margin-left: 10%;
+    width: 50vh;
+}
+.bloco2 {
+    margin-left: 42%;
+    width: 50vh;
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+}
+.iconesol {
+    margin-top: 30%;
+    height: 15vh;
+    width: 15vh;
+}
+.informacoesdia {
+    margin-top: 3.5vh;
+}
+
+.dia {
+    margin-top: 1vh;
+    width: 40vw;
+    height: 25vh;
+    font-size: 2vh;
+    border-radius: 20px;
+    border-style: hidden;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    background-color: black;
+    opacity: 50%;
+}
+.today {
+    margin-left: 10%;
+    align-items: center;
+    margin-bottom: 2%;
+    justify-content: center;
+    width: 80vw;
+    height: 25vh;
+    font-size: 2vh;
+    border-radius: 20px;
+    border-style: hidden;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    background-color: black;
+    opacity: 50%;
+}
+#previsao {
+    margin-right: 138vh;
+    
+}
+.tudo {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.previsao-horas-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1.6vw;
+    padding: 10vh;
+    justify-content: center;
+    width: 90vw;
+    height: 30vh; /* Ocupa a metade inferior da tela */
+    max-width: 100%; /* Garante que o container não ultrapasse a tela */
+    align-self: center; /* Alinha os blocos no final da área disponível */   
+    
+}
+
+.previsao-hora {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 2vh;
+    border-radius: 10%;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    min-width: 100px;
+    color: white;
+
+    /* Tamanhos verticais maiores para preencher a área */
+    height: 100%; /* Ocupa a altura total do container */
+    flex: 1 1 auto; /* Garante que o bloco se ajuste ao espaço disponível */
+}
+
+.previsao-hora p {
+    margin: 0.5vh 0;    
+}
+
+.previsao-hora img {
+    height: 15vh; /* Ajusta o tamanho da imagem de acordo com o novo layout */
+    width: 15vh;
+    margin-top: 0.5vh;
+}
